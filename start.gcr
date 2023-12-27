@@ -1,0 +1,19 @@
+org 100
+define END_TEXT 3 ; COMMENT
+
+string: malcb "hello, world\n" END_TEXT
+string2: malcb "hello, not\n" END_TEXT
+int: malc 1000
+
+org 350
+
+set [string] "hello, world\n\3"     ; setting string to normal
+set [int] 1000                      ; setting int to normal
+printi [int]                        ; printing
+printc 0xA                          ; printing new line
+set [int] 600                       ; setting int to 600
+printi [int]                        ; printing new int
+printc 0xA                          ; new line
+print [string]                      ; printing string
+set [string] [string2]              ; changing string
+print [string]                      ; prinint new string
